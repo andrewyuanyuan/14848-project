@@ -1,13 +1,16 @@
+apiVersion: apps/v1
 apiVersion: v1
 kind: Service
 metadata:
-  name: jupyter-lb
+  labels:
+    app: jupyter-notebook-service
+  name: jupyter-notebook-service
 spec:
-  type: LoadBalancer
-  loadBalancerIP: 34.138.10.197
   ports:
     - port: 8888
       protocol: TCP
       targetPort: 8888
+      nodePort: 30963
   selector:
-    app: app-jupyter
+    app: jupyter-notebook-service
+  type: NodePort
