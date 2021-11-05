@@ -37,6 +37,16 @@
 
 ### Configure, build and upload my Docker images
 
+For **Jupyter notebook** and **Spark**, we can just pull their official images in GCP from docker hub.
+
+For **Hadoop**, I included all the environment variables in my Dockerfiles to make it runnable on GCP. You can see more details in the Dockerfile in [deployment-files-and-dockerfiles](https://github.com/andrewyuanyuan/14848-project/tree/main/deployment-files-and-dockerfiles) folder.
+
+For **SonarQube**, in order to run it in GCP, I built it upon the source code of this [project](https://hub.docker.com/_/sonarqube), customize my Dockerfile and build my own image.
+
+For **terminal application**, I used React to build it frontend interface.
+
+You can see all the Dockerfiles and source codes in my repository.
+
 ### Create my own GKE Kubernetes cluster
 
 In this step, I simply used the Kubernetes cluster I created at the beginning of this semester as the following picture shows.
@@ -115,9 +125,9 @@ This step can also be done in two paths.
 
 Click the individual workload in `Workloads` page, if an image has not been exposed yet, there will be an option at the top of the page. If you choose to `Expose`, GKE would ask you to configure its `Port`, `Target Port`, `Protocal` and `Service type`. 
 
-Here I choose to expose four worker images (Hadoop, Spark, Jupyter notebook and Sonarqube) as `NodePort` so that they always has the same IP address with different ports. 
+Here I choose to **expose four worker images (Hadoop, Spark, Jupyter notebook and Sonarqube) as `NodePort`** so that they always has the same IP address with different ports. 
 
-As for the terminal application, I choose to expose it as work balancer.
+**As for the terminal application, I choose to expose it as work balancer.**
 
 **Here is all the services I created, and you can see their port configuration in the screenshot below.**
 
@@ -146,3 +156,43 @@ kubectl apply -f [image name]-service.yaml
 ```
 
 You can see all my service-creating files in [deployment-files-and-dockerfiles](https://github.com/andrewyuanyuan/14848-project/tree/main/deployment-files-and-dockerfiles) folder.
+
+## Application Demo
+
+After all the steps above, we now have five services and we can run them now. 
+
+#### Terminal application
+
+My external IP address for my terminal application is `34.135.79.151:80`
+
+![10](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\10.png)
+
+![11](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\11.png)
+
+You can click the items in the toolbox to access them.
+
+#### Jupyter Notebook
+
+The IP address for my Jupyter Notebook is `http://34.135.237.146:30963/`
+
+![12](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\12.png)
+
+#### Spark
+
+The IP address for my Spark service is `http://34.135.237.146:31749/`
+
+![13](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\13.png)
+
+#### Hadoop
+
+The IP address for my Spark service is `http://34.135.237.146:30070/`, which has two namenodes
+
+![14](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\14.png)
+
+![15](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\15.png)
+
+#### SonarQube
+
+The IP address for my Spark service is `http://34.135.237.146:30299/`
+
+![16](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\16.png)
