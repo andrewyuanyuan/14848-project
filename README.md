@@ -51,7 +51,7 @@ You can see all the Dockerfiles and source codes in my repository.
 
 In this step, I simply used the Kubernetes cluster I created at the beginning of this semester as the following picture shows.
 
-![1](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\1.png)
+![1](https://github.com/andrewyuanyuan/14848-project/blob/main/screenshots/1.png?raw=true)
 
 It is also very simple if you want to create your own cluster following the steps below:
 
@@ -83,9 +83,9 @@ docker push gcr.io/[project name]/anyuanyu/[image name]
 
 After running these commands, you can see all the images in your `Container Registry`, as the pictures shown below.
 
-![2](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\2.png)
+![2](https://github.com/andrewyuanyuan/14848-project/blob/main/screenshots/2.png?raw=true)
 
-![3](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\3.png)
+![3](https://github.com/andrewyuanyuan/14848-project/blob/main/screenshots/3.png?raw=true)
 
 ### Deploying my docker images to GKE Kubernetes Cluster
 
@@ -97,15 +97,15 @@ This path is quite straightforward.
 
 1. Enter the image details page in `Container Registry`, click `deploy`
 
-   ![4](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\4.png)
+   ![4](https://github.com/andrewyuanyuan/14848-project/blob/main/screenshots/4.png?raw=true)
 
 2. Configure your image. In my case, I only need to change the application name.
 
-   ![5](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\5.png)
+   ![5](https://github.com/andrewyuanyuan/14848-project/blob/main/screenshots/5.png?raw=true)
 
 3. By this way, you can see your images transferred to the `Workloads` in `Kubernetes Engine`. **Here is all the images I deployed on Kubernetes Engine.**
 
-   ![6](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\6.png)
+   ![6](https://github.com/andrewyuanyuan/14848-project/blob/main/screenshots/6.png?raw=true)
 
 #### Path 2: Using deployment.yaml to deploy
 
@@ -131,11 +131,11 @@ Here I choose to **expose four worker images (Hadoop, Spark, Jupyter notebook an
 
 **Here is all the services I created, and you can see their port configuration in the screenshot below.**
 
-![7](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\7.png)
+![7](https://github.com/andrewyuanyuan/14848-project/blob/main/screenshots/7.png?raw=true)
 
 Besides, After creating these services, we also need to set the firewall rules in the cloud shell or `firewall` of GKE for each service. We can obtain node ports by clicking the service name. For example, for our `jupyter-notebook-service`, the port is `30963`.
 
-![8](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\8.png)
+![8](https://github.com/andrewyuanyuan/14848-project/blob/main/screenshots/8.png?raw=true)
 
 Then we use the command below to set up firewall rules for this service.
 
@@ -145,7 +145,7 @@ gcloud compute firewall-rules create jupyter-notebook-service --allow tcp: 3-309
 
 After these step, we can use `kubectl get nodes -o wide` to get our service IP, where we can see all the available node and their IPs. Then, by enter `NodeIP:NodePort` in your browser, you can access the service. E.g. In my case, the service address for Jupyter-notebook-service is `http://34.135.237.146:30963/`
 
-![9](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\9.png)
+![9](https://github.com/andrewyuanyuan/14848-project/blob/main/screenshots/9.png?raw=true)
 
 #### Path 2: Using service.yaml to expose
 
@@ -165,7 +165,7 @@ After all the steps above, we now have five services and we can run them now.
 
 My external IP address for my terminal application is `34.135.79.151:80`
 
-![10](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\10.png)
+![10](https://github.com/andrewyuanyuan/14848-project/blob/main/screenshots/10.png?raw=true)
 
 ![11](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\11.png)
 
@@ -175,24 +175,25 @@ You can click the items in the toolbox to access them.
 
 The IP address for my Jupyter Notebook is `http://34.135.237.146:30963/`
 
-![12](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\12.png)
+![12](https://github.com/andrewyuanyuan/14848-project/blob/main/screenshots/12.png?raw=true)
 
 #### Spark
 
 The IP address for my Spark service is `http://34.135.237.146:31749/`
 
-![13](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\13.png)
+![13](https://github.com/andrewyuanyuan/14848-project/blob/main/screenshots/13.png?raw=true)
 
 #### Hadoop
 
 The IP address for my Spark service is `http://34.135.237.146:30070/`, which has two namenodes
 
-![14](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\14.png)
+![14](https://github.com/andrewyuanyuan/14848-project/blob/main/screenshots/14.png?raw=true)
 
-![15](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\15.png)
+![15](https://github.com/andrewyuanyuan/14848-project/blob/main/screenshots/15.png?raw=true)
 
 #### SonarQube
 
 The IP address for my Spark service is `http://34.135.237.146:30299/`
 
-![16](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\16.png)
+![16](https://github.com/andrewyuanyuan/14848-project/blob/main/screenshots/16.png?raw=true)
+
