@@ -167,7 +167,7 @@ My external IP address for my terminal application is `34.135.79.151:80`
 
 ![10](https://github.com/andrewyuanyuan/14848-project/blob/main/screenshots/10.png?raw=true)
 
-![11](C:\Users\Andew\Documents\GitHub\14848-project\screenshots\11.png)
+![11](https://github.com/andrewyuanyuan/14848-project/blob/main/screenshots/11.png?raw=true)
 
 You can click the items in the toolbox to access them.
 
